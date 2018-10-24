@@ -101,6 +101,10 @@ Only do this when you are sure about your code, or have uploaded it in a way tha
 
 You should be able to follow this any other codes you make. Make sure that you upload to the correct locations. IE create new folders and save your files in the respectfully folder before you push.
 
+# Pull from GitHub
+
+This is for when you need to update your repo on your computer. This will pull all the code and changes that others have made. This is done by clicking the blue down arrow in the "Git" tab.
+
 # IMPORTANT THINGS TO NOTE
 
 1. NEVER PUSH UNLESS YOU ARE SURE YOU WANT THOSE CHANGES TO BE MADE FOR EVERYONE.
