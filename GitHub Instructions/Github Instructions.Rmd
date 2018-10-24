@@ -1,0 +1,111 @@
+---
+title: "Github Instructions"
+date: "10/24/2018"
+output: pdf_document
+---
+
+# Install Git on your Computer
+
+More in depth instructions found here: <http://happygitwithr.com/install-git.html#install-git>. This guide will be based off of this website.
+
+## Check for Git
+
+Open Terminal/Command Line/Console on your computer and run the following code.
+
+NOTICE: If you run this code on MacOS and do not have Git installed, this will prompt you to install it. Accept it, and you will be done for this section.
+
+Run the following code:
+\begin{verbatim}
+which git
+\end{verbatim}
+
+And expect to see the output if you have git installed:
+\begin{verbatim}
+/usr/bin/git
+\end{verbatim}
+
+Then check the version of git by running the code:
+\begin{verbatim}
+git --version
+\end{verbatim}
+
+If you have a version output (i.e. git version 2.15.1), then you are done with step. If not, continue to install on your system.
+
+\end{verbatim}
+
+### Windows
+
+Currently working on this section. See <http://happygitwithr.com/install-git.html#install-git> for more information. I will be updating this soon.
+
+### MacOS
+
+We will need to install Xcode command line tools to do this. Launch terminal and input the following code:
+\begin{verbatim}
+git --version
+\end{verbatim}
+Accept to install.
+
+### Linux
+
+#### Ubuntu or Debian Linux
+
+In the terminal run the follow code:
+\begin{verbatim}
+sudo apt-get install git
+\end{verbatim}
+
+#### Fedora or RedHat Linux
+In the terminal run the follow code:
+\begin{verbatim}
+sudo yum install git
+\end{verbatim}
+
+
+
+
+# Create a GitHub Account
+
+This step is pretty simple. Make a github account.
+
+# Get the Class GitHub account
+
+I am sure that this will change per class, but our GitHub will be at the location: https://github.com/StevenSeeger/Stat435Class. This is important that have the right location. Please be using the newest version of R Studio.
+
+1. Start a new project in R studio
++ File > New Project > Version Control > Git
++ In the “repository URL” paste the URL of your new GitHub repository
++ This can be found by going to the GitHub location said above, then clicking on the "Clone or Download" tabe. It should appear with "https://github.com/StevenSeeger/Stat435Class.git".
+
+2. I would suggest making a new local location somewhere on your computer with this. We will need to decide how to properly store our R code, and how we will push our code online. Then create the project.
+
+3. This will download all the files to your computer. We will test to ensure that you have this properly next.
+
+4. Open the README.md from the main list. Add your name to where the students are listed. Include a new line inbetween each student. Save the file. Commit and Push to GitHub. Follow the next Section.
+
+# Committing to GitHub
+
+Only do this when you are sure about your code, or have uploaded it in a way that it will not write over old code.
+
+1. In the right hand corner of the screen, where you see the environment and your variables, there will be a new tab called "Git". Click on that tab.
+
+2. Check the Staged box for "README.md" then click "Commit".
+
+3. Type in the "Message Box" a message. In the future, type something meaning, such as how you changed the code, what you added, etc. For this, just add a funny youtube link or something, or a good message to your fellow students.
+
+4. Click "Commit"
+
+5. Push local Changes to GitHub by clicking the green arrow with "Push" after it. It may prompt you for a username and password. Enter them.
++ Adding a section for how to elimate this step later.
+
+6. Go back to the GitHub repo (i.e. https://github.com/StevenSeeger/Stat435Class) and refresh the page. You should see your name added to the README.md.
+
+You should be able to follow this any other codes you make. Make sure that you upload to the correct locations. IE create new folders and save your files in the respectfully folder before you push.
+
+# IMPORTANT THINGS TO NOTE
+
+1. NEVER PUSH UNLESS YOU ARE SURE YOU WANT THOSE CHANGES TO BE MADE FOR EVERYONE.
++ A good way to avoid this, is to create a personal folder inside of the "STUDENTS" folder where you save your personal work (which everyone can access) then push to the appriopriate folders when you are sure about your code.
+
+2. DO NOT PUSH THINGS THAT ARE PERSONAL TO YOU AND YOU DO NOT WANT OTHERS TO VIEW
+
+3. TALK TO Steven Seeger OR EMAIL sseeger1996@gmail.com IF YOU HAVE ANY QUESTIONS
