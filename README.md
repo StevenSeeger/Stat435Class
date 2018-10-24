@@ -3,6 +3,7 @@ This is a repository for the Class. Be careful of editing files and R code. Also
 
 # Class List
 Professor: Dr. Scott
+
 TA: Angela
 
 Students:
