@@ -7,4 +7,5 @@ Professor: Dr. Scott
 TA: Angela
 
 Students:
+
 Steven Seeger
