@@ -1,0 +1,96 @@
+---
+title: "435_10-4-17"
+output: html_notebook
+---
+
+Permutation test with tires data
+
+Load in appropriate packages
+```{r}
+library(tidyverse)
+library(openxlsx)
+```
+
+Read in the data--
+```{r}
+# EVENTUALLY: ou'll want to pass in tires (the dataframe), and how many
+# samples you want, and get results
+tires <- read.xlsx('tires.xlsx')
+
+#smalltires <- tires[1:10,]
+smalltires <- tires[1:5,]
+samplesize <- nrow(smalltires)
+
+```
+
+
+This is all the observations on which we'll be doing a permutation test
+```{r}
+#fullsample <- c(smalltires$Flatt, smalltires$Firetire[1:2])
+fullsample <- c(smalltires$Flatt, smalltires$Firetire)
+
+results <- t.test(smalltires$Flatt, smalltires$Firetire, var.equal = TRUE)
+
+results
+```
+
+
+
+```{r}
+# potential samples
+constant <- length(fullsample)
+
+samples <- combn(constant, samplesize) #combination of 10 things, 5 at a time; 10 choose 5
+
+x <- fullsample[samples[,10]] #give me these data points
+y <- fullsample[-samples[,10]]
+
+```
+
+
+The great loop!
+
+```{r}
+samples.ncol <- ncol(samples)
+nsim <- 252
+tires.t <- numeric(nsim)
+tires.t.dts <- NULL
+
+#for (i in 1:samples.ncol) {
+#for (j in 1:nsim) {
+  #i <- sample(1:samples.ncol, 1)
+  # Do a t test on all possible combinations,
+  # Append things onto the loop! (count all that are as or more extreme.)
+  #tires.t[j] <- (t.test(fullsample[samples[,i]], fullsample[-samples[,i]], var.equal = TRUE))$statistic
+  
+#}
+
+  
+k <- sample(1:samples.ncol, nsim)
+for (j in 1:nsim) {
+# Do a t test on all possible combinations,
+# Append things onto the loop! (count all that are as or more extreme.)
+  i <- k[j]
+  tires.t[j] <- (t.test(fullsample[samples[,i]], fullsample[-samples[,i]], 
+                        var.equal = TRUE))$statistic
+}
+```
+
+
+Plot & compare with our sample's statistic
+```{r}
+hist(tires.t, breaks = 30)
+abline(v = results$statistic, col = 'red')
+
+# ... yeah, that's not rare.
+
+
+# This is on or t statistics. It doesn't look quite normal-- a bit more room in the tails
+# That's because we're comparing samples of size 10
+qqnorm(tires.t)
+
+1-sum(results$statistic < tires.t)/(length(tires.t)) #1-sided test as to seeing if tires.t is significant
+
+```
+
+
