@@ -8,4 +8,4 @@ pchisq(val1, 4, lower.tail = FALSE)
 
 lambda <- .7
 se <- sqrt(lambda) / sqrt(280)
-c(lambda+se*1.96,lambda-se*1.96)
+c(lambda-se*1.96,lambda+se*1.96)
