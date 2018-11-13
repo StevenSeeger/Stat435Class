@@ -9,3 +9,5 @@ TA: Angela
 Students:
 
 Steven Seeger
+
+Josh Singer
